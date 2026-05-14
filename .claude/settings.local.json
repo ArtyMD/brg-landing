@@ -14,7 +14,8 @@
       "PowerShell(git -C \"c:\\\\Users\\\\artur\\\\OneDrive\\\\Documents\\\\Coding\\\\bergen\\\\ppc-landing-page\" credential reject \"protocol=https`nhost=github.com`n\" 2>&1)",
       "Bash(git config *)",
       "PowerShell(netstat -ano)",
-      "Bash(python -m http.server 8080)"
+      "Bash(python -m http.server 8080)",
+      "WebFetch(domain:unpkg.com)"
     ]
   }
 }

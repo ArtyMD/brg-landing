@@ -14,8 +14,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +40,7 @@ html { scroll-behavior: smooth; }
   --gray-200:    #DDE1EE;
   --gray-400:    #8A94AD;
   --gray-600:    #4A5368;
-  --font-head:   'Euclid Circular A', sans-serif;
+  --font-head:   'Sora', sans-serif;
   --font-body:   'Poppins', sans-serif;
   --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-xl: 24px;
   --sh-sm: 0 1px 3px rgba(18,76,158,.08), 0 1px 2px rgba(18,76,158,.04);
@@ -63,13 +65,21 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gray-400); }
 
 /* ── NAV ── */
 nav {
-  background: var(--navy);
+  background: rgba(10, 50, 112, 0.93);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
   position: sticky; top: 0; z-index: 100;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 1px 0 rgba(255,255,255,.05), 0 4px 32px rgba(10,48,102,.25);
 }
 .nav-inner {
   max-width: var(--max-w);
@@ -93,12 +103,14 @@ nav {
 .nav-phone:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); color: #fff; }
 .nav-phone i { font-size: 12px; }
 .nav-cta {
-  background: var(--orange); color: #fff;
+  background: linear-gradient(135deg, #f7803a 0%, var(--orange-dark) 100%);
+  color: #fff;
   font-family: var(--font-body); font-size: 13px; font-weight: 600;
   padding: 9px 18px; border-radius: var(--r-sm);
-  text-decoration: none; transition: background .2s, transform .1s;
+  text-decoration: none; transition: box-shadow .2s, transform .15s;
+  box-shadow: 0 2px 12px rgba(242,100,25,.35);
 }
-.nav-cta:hover { background: var(--orange-dark); }
+.nav-cta:hover { box-shadow: 0 4px 20px rgba(242,100,25,.5); transform: translateY(-1px); }
 .nav-cta:active { transform: scale(.98); }
 
 /* ── HERO ── */
@@ -109,7 +121,7 @@ nav {
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('bergen%20hero%20image.png') center center / cover no-repeat;
+  background: url('hero_image.webp') center center / cover no-repeat;
   filter: blur(3px) brightness(0.3);
   transform: scale(1.04);
 }
@@ -149,7 +161,7 @@ nav {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--gutter);
-  display: grid; grid-template-columns: 1fr 400px;
+  display: grid; grid-template-columns: 1fr 400px; grid-template-rows: 1fr 550px;
   column-gap: 56px; row-gap: 0; align-items: start;
   position: relative; z-index: 1;
 }
@@ -178,10 +190,14 @@ nav {
   font-family: var(--font-head); font-size: 48px; font-weight: 700;
   color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 18px;
 }
-.hero-top h1 em { color: var(--orange); font-style: normal; }
+.hero-top h1 em {
+  background: linear-gradient(135deg, #ffaa6b 0%, var(--orange) 55%, #d4530d 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; font-style: normal;
+}
 .hero-top .subtitle {
   font-size: 17px; color: rgba(255,255,255,.85);
-  max-width: 500px; margin-bottom: 40px; line-height: 1.7;
+  max-width: 600px; margin-bottom: 40px; line-height: 1.7;
 }
 
 .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 44px; }
@@ -198,18 +214,27 @@ nav {
 .stats-row { display: flex; padding-top: 36px; border-top: 1px solid rgba(255,255,255,.2); }
 .stat-item { flex: 1; }
 .stat-item:not(:last-child) { padding-right: 24px; margin-right: 24px; border-right: 1px solid rgba(255,255,255,.2); }
-.stat-number { font-family: var(--font-head); font-size: 30px; font-weight: 700; color: var(--orange); line-height: 1; }
+.stat-number {
+  font-family: var(--font-head); font-size: 34px; font-weight: 800; line-height: 1;
+  background: linear-gradient(135deg, #ffaa6b 0%, var(--orange) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .stat-label { font-size: 11px; color: rgba(255,255,255,.72); margin-top: 4px; }
 
 /* ── FORM CARD ── */
 .form-card {
-  background: rgba(255,255,255,.97);
+  background: #fff;
   border-radius: var(--r-xl);
   padding: 36px 32px;
-  box-shadow: var(--sh-lg), 0 0 0 1px rgba(255,255,255,.15);
+  box-shadow: 0 24px 64px rgba(10,48,102,.22), 0 4px 20px rgba(10,48,102,.1), 0 0 0 1px rgba(255,255,255,.15);
   position: relative; z-index: 2;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+.form-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--orange) 0%, var(--navy) 100%);
 }
 .form-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
 .form-card h3 { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; line-height: 1.25; }
@@ -238,16 +263,18 @@ nav {
 .phone-input-row input { flex: 1; min-width: 0; width: auto; }
 .btn-primary {
   width: 100%; padding: 15px;
-  background: var(--orange); color: #fff;
+  background: linear-gradient(135deg, #f7803a 0%, var(--orange-dark) 100%);
+  color: #fff;
   font-family: var(--font-body); font-size: 16px; font-weight: 700;
   border: none; border-radius: var(--r-md); cursor: pointer;
-  transition: background .2s, transform .1s; margin-top: 4px;
+  transition: box-shadow .2s, transform .15s; margin-top: 4px;
   display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 3px 14px rgba(242,100,25,.35);
 }
-.btn-primary:hover { background: var(--orange-dark); }
-.btn-primary:active { transform: scale(.99); }
+.btn-primary:hover { box-shadow: 0 6px 22px rgba(242,100,25,.5); transform: translateY(-1px); }
+.btn-primary:active { transform: scale(.99); box-shadow: none; }
 .btn-primary i { font-size: 15px; transition: transform .2s; }
-.btn-primary:hover i { transform: translateX(3px); }
+.btn-primary:hover i { transform: translateX(4px); }
 .form-trust { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11px; color: var(--gray-400); margin-top: 12px; }
 .form-trust i { font-size: 11px; color: var(--gray-400); }
 .form-group.has-error label { color: #dc2626; }
@@ -295,8 +322,17 @@ section { padding: 80px 0; }
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
-.section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
-.section-title { font-family: var(--font-head); font-size: 36px; font-weight: 700; color: var(--text-dark); line-height: 1.15; margin-bottom: 14px; letter-spacing: -.5px; }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.section-label::before {
+  content: ''; display: inline-block;
+  width: 18px; height: 2px; border-radius: 1px;
+  background: linear-gradient(90deg, var(--orange), rgba(242,100,25,.3));
+}
+.section-title { font-family: var(--font-head); font-size: 38px; font-weight: 700; color: var(--text-dark); line-height: 1.12; margin-bottom: 14px; letter-spacing: -.6px; }
 .section-sub { font-size: 17px; color: var(--gray-600); max-width: 580px; line-height: 1.7; margin-bottom: 48px; }
 
 /* ── PROBLEMS ── */
@@ -304,9 +340,18 @@ section { padding: 80px 0; }
 .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .about-card {
   background: var(--white); border-radius: var(--r-lg); padding: 28px 24px;
-  border: 1px solid var(--gray-200); transition: border-color .2s, box-shadow .2s;
+  border: 1px solid var(--gray-200);
+  transition: border-color .3s, box-shadow .3s, transform .3s;
+  position: relative; overflow: hidden;
 }
-.about-card:hover { border-color: var(--orange); box-shadow: var(--sh-md); }
+.about-card::before {
+  content: ''; position: absolute; left: 0; top: 12%; bottom: 12%;
+  width: 3px; border-radius: 0 2px 2px 0;
+  background: linear-gradient(180deg, var(--orange), var(--navy));
+  opacity: 0; transition: opacity .3s;
+}
+.about-card:hover { border-color: rgba(18,76,158,.18); box-shadow: 0 12px 40px rgba(18,76,158,.1), 0 2px 8px rgba(18,76,158,.06); transform: translateY(-4px); }
+.about-card:hover::before { opacity: 1; }
 .problem-tag {
   display: inline-block; font-size: 10px; font-weight: 700;
   background: var(--orange-pale); color: var(--orange);
@@ -315,10 +360,14 @@ section { padding: 80px 0; }
 }
 .card-icon-wrap {
   width: 48px; height: 48px; border-radius: var(--r-md);
-  background: var(--off-white); border: 1px solid var(--gray-200);
+  background: linear-gradient(135deg, rgba(18,76,158,.08) 0%, rgba(18,76,158,.03) 100%);
+  border: 1px solid rgba(18,76,158,.12);
   display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+  transition: background .3s, border-color .3s;
 }
-.card-icon-wrap i { font-size: 20px; color: var(--navy); }
+.card-icon-wrap i { font-size: 20px; color: var(--navy); transition: color .3s; }
+.about-card:hover .card-icon-wrap { background: linear-gradient(135deg, rgba(242,100,25,.1) 0%, rgba(242,100,25,.04) 100%); border-color: rgba(242,100,25,.22); }
+.about-card:hover .card-icon-wrap i { color: var(--orange); }
 .about-card h3 { font-family: var(--font-head); font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
 .about-card p { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
 
@@ -334,11 +383,11 @@ section { padding: 80px 0; }
 .solutions-section .section-sub { color: rgba(255,255,255,.5); }
 .solutions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
 .solution-card {
-  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
   border-radius: var(--r-lg); padding: 26px 22px;
-  transition: background .2s, border-color .2s;
+  transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
 }
-.solution-card:hover { background: rgba(242,100,25,.09); border-color: rgba(242,100,25,.4); }
+.solution-card:hover { background: rgba(242,100,25,.08); border-color: rgba(242,100,25,.38); box-shadow: 0 12px 32px rgba(0,0,0,.18); transform: translateY(-3px); }
 .s-icon-wrap {
   width: 44px; height: 44px; border-radius: var(--r-md);
   background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
@@ -356,14 +405,17 @@ section { padding: 80px 0; }
 .testimonial-card {
   background: var(--off-white); border-radius: var(--r-lg); padding: 28px 24px;
   border: 1px solid var(--gray-200);
+  transition: box-shadow .3s, transform .3s, border-color .3s;
 }
+.testimonial-card:hover { box-shadow: 0 12px 36px rgba(18,76,158,.1); transform: translateY(-3px); border-color: rgba(18,76,158,.15); }
 .stars { display: flex; gap: 3px; margin-bottom: 16px; }
 .stars i { font-size: 14px; color: var(--orange); }
 .quote-mark { font-size: 52px; line-height: .75; color: var(--orange); font-family: Georgia, serif; margin-bottom: 10px; opacity: .35; }
 .testimonial-card blockquote { font-size: 14px; color: var(--gray-600); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
 .testimonial-footer { display: flex; align-items: center; gap: 10px; }
 .testimonial-avatar {
-  width: 38px; height: 38px; border-radius: 50%; background: var(--navy);
+  width: 38px; height: 38px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0;
 }
@@ -378,16 +430,20 @@ section { padding: 80px 0; }
 .award-item {
   background: var(--white); border: 1px solid var(--gray-200);
   border-radius: var(--r-md); padding: 22px 16px; text-align: center;
-  transition: box-shadow .2s, border-color .2s;
+  transition: box-shadow .3s, border-color .3s, transform .3s;
 }
-.award-item:hover { box-shadow: var(--sh-sm); border-color: var(--orange); }
+.award-item:hover { box-shadow: 0 8px 28px rgba(18,76,158,.1); border-color: rgba(242,100,25,.3); transform: translateY(-3px); }
 .award-icon-wrap {
   width: 52px; height: 52px; border-radius: 50%;
-  background: var(--off-white); border: 1px solid var(--gray-200);
+  background: linear-gradient(135deg, rgba(18,76,158,.07) 0%, rgba(18,76,158,.03) 100%);
+  border: 1px solid rgba(18,76,158,.12);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 10px;
+  transition: background .3s, border-color .3s;
 }
-.award-icon-wrap i { font-size: 22px; color: var(--navy); }
+.award-icon-wrap i { font-size: 22px; color: var(--navy); transition: color .3s; }
+.award-item:hover .award-icon-wrap { background: linear-gradient(135deg, rgba(242,100,25,.1) 0%, rgba(242,100,25,.04) 100%); border-color: rgba(242,100,25,.22); }
+.award-item:hover .award-icon-wrap i { color: var(--orange); }
 .award-item p { font-size: 12px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
 .media-row { display: flex; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
 .media-label { font-size: 13px; color: var(--gray-600); margin-right: 4px; }
@@ -404,17 +460,18 @@ section { padding: 80px 0; }
   background: var(--off-white); border: 1px solid var(--gray-200);
   border-radius: var(--r-md); padding: 16px 10px; text-align: center;
   font-size: 11px; font-weight: 600; color: var(--text-dark);
-  transition: border-color .2s, box-shadow .2s;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
 }
-.integration-chip:hover { border-color: var(--orange); box-shadow: 0 2px 10px rgba(242,100,25,.1); }
+.integration-chip:hover { border-color: rgba(242,100,25,.4); box-shadow: 0 6px 18px rgba(242,100,25,.12); transform: translateY(-2px); }
 .i-icon-wrap { margin-bottom: 8px; }
-.i-icon-wrap i { font-size: 22px; color: var(--navy); }
+.i-icon-wrap i { font-size: 22px; color: var(--navy); transition: color .25s; }
+.integration-chip:hover .i-icon-wrap i { color: var(--orange); }
 .integrations-more { text-align: center; margin-top: 22px; font-size: 14px; color: var(--gray-600); }
 .integrations-more strong { color: var(--orange); }
 
 /* ── BOTTOM CTA ── */
 .bottom-cta {
-  background: var(--navy);
+  background: linear-gradient(135deg, var(--navy-dark) 0%, #0b3880 50%, var(--navy) 100%);
   position: relative; overflow: hidden;
   padding: 80px 0;
 }
@@ -435,15 +492,17 @@ section { padding: 80px 0; }
 .bottom-cta p { font-size: 17px; color: rgba(255,255,255,.5); max-width: 500px; margin: 0 auto 36px; }
 .cta-buttons { display: flex; align-items: center; justify-content: center; gap: 16px; }
 .btn-cta-primary {
-  background: var(--orange); color: #fff;
+  background: linear-gradient(135deg, #f7803a 0%, var(--orange-dark) 100%);
+  color: #fff;
   font-family: var(--font-body); font-size: 16px; font-weight: 700;
   padding: 16px 36px; border-radius: var(--r-md); border: none; cursor: pointer;
   text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
-  transition: background .2s, transform .1s;
+  transition: box-shadow .2s, transform .15s;
+  box-shadow: 0 4px 22px rgba(242,100,25,.45);
 }
-.btn-cta-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.btn-cta-primary:hover { box-shadow: 0 8px 32px rgba(242,100,25,.6); transform: translateY(-2px); }
 .btn-cta-primary i { font-size: 14px; transition: transform .2s; }
-.btn-cta-primary:hover i { transform: translateX(3px); }
+.btn-cta-primary:hover i { transform: translateX(4px); }
 .btn-cta-secondary {
   background: #fff; color: var(--navy);
   font-family: var(--font-body); font-size: 16px; font-weight: 700;
@@ -475,12 +534,13 @@ footer {
 /* ── FLOAT CTA ── */
 .float-cta {
   position: fixed; bottom: 28px; right: 28px; z-index: 99;
-  background: var(--orange); color: #fff;
+  background: linear-gradient(135deg, #f7803a 0%, var(--orange-dark) 100%);
+  color: #fff;
   font-family: var(--font-body); font-size: 14px; font-weight: 700;
   padding: 13px 24px; border-radius: 32px; border: none; cursor: pointer;
-  box-shadow: 0 4px 20px rgba(242,100,25,.45);
+  box-shadow: 0 4px 24px rgba(242,100,25,.5), 0 0 0 5px rgba(242,100,25,.12);
   display: flex; align-items: center; gap: 9px;
-  text-decoration: none; transition: background .2s, transform .15s, box-shadow .15s;
+  text-decoration: none; transition: transform .15s, box-shadow .15s;
   opacity: 0; animation: fadeUp .5s ease both; animation-delay: 2.5s;
 }
 .float-cta i { font-size: 14px; }
@@ -488,7 +548,7 @@ footer {
   from { opacity:0; transform:translateY(14px); }
   to { opacity:1; transform:translateY(0); }
 }
-.float-cta:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(242,100,25,.5); }
+.float-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(242,100,25,.6), 0 0 0 5px rgba(242,100,25,.18); }
 
 /* ── FORM TEXTAREA ── */
 .form-group textarea {
@@ -585,7 +645,7 @@ footer {
 
 /* Tablet portrait: 768–1024px */
 @media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; grid-template-rows: 1fr; }
   .hero-top    { grid-column: auto; grid-row: auto; order: 1; }
   .form-card   { grid-column: auto; grid-row: auto; order: 2; }
   .hero-bottom { grid-column: auto; grid-row: auto; order: 3; }
@@ -677,7 +737,7 @@ footer {
 <nav>
   <div class="nav-inner">
   <a href="#" class="nav-logo" aria-label="Bergen Logistics">
-    <img src="/bl-elanders.svg" alt="Bergen Logistics"
+    <img src="/logo.svg" alt="Bergen Logistics"
          onerror="this.style.display='none'; document.getElementById('nav-logo-text').style.display='block'">
     <span id="nav-logo-text" class="nav-logo-text" style="display:none">Bergen Logistics</span>
   </a>
@@ -705,28 +765,28 @@ footer {
   <div class="hero-bottom anim-slide-left">
     <div class="diff-grid" aria-label="Key features">
       <div class="diff-item">
-        <div class="diff-icon" aria-hidden="true"><i class="fa-solid fa-warehouse"></i></div>
+        <div class="diff-icon" aria-hidden="true"><i class="ph-light ph-buildings"></i></div>
         <div class="diff-content">
           <h4>US, EU, UK &amp; Asia Locations</h4>
           <p>Global fulfillment across 4 continents</p>
         </div>
       </div>
       <div class="diff-item">
-        <div class="diff-icon" aria-hidden="true"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <div class="diff-icon" aria-hidden="true"><i class="ph-light ph-stack"></i></div>
         <div class="diff-content">
           <h4>Omnichannel Fulfillment</h4>
           <p>E-commerce, wholesale, retail &amp; dropship</p>
         </div>
       </div>
       <div class="diff-item">
-        <div class="diff-icon" aria-hidden="true"><i class="fa-solid fa-display"></i></div>
+        <div class="diff-icon" aria-hidden="true"><i class="ph-light ph-monitor"></i></div>
         <div class="diff-content">
           <h4>Proprietary CloudX WMS</h4>
           <p>Real-time visibility &amp; 50+ integrations</p>
         </div>
       </div>
       <div class="diff-item">
-        <div class="diff-icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
+        <div class="diff-icon" aria-hidden="true"><i class="ph-light ph-target"></i></div>
         <div class="diff-content">
           <h4>99.5% Order Accuracy</h4>
           <p>Industry-leading precision every shipment</p>
@@ -824,13 +884,13 @@ footer {
         <span class="field-error" id="err-message">Please describe your business in at least 5 words.</span>
       </div>
       <button class="btn-primary" onclick="handleSubmit()" aria-label="Submit consultation request">
-        Request a Consultation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        Request a Consultation <i class="ph-light ph-arrow-right" aria-hidden="true"></i>
       </button>
-      <p class="form-trust"><i class="fa-solid fa-lock" aria-hidden="true"></i> No spam. Your info stays private.</p>
+      <p class="form-trust"><i class="ph-light ph-lock-simple" aria-hidden="true"></i> No spam. Your info stays private.</p>
     </div>
 
     <div class="form-success" id="form-success" role="alert">
-      <div class="check-circle" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></div>
+      <div class="check-circle" aria-hidden="true"><i class="ph-light ph-check-circle"></i></div>
       <h3>You're all set!</h3>
       <p>A Bergen Logistics expert will reach out within 1 business day to discuss your fulfillment needs.</p>
     </div>
@@ -858,37 +918,37 @@ footer {
   <div class="about-grid anim-stagger">
     <div class="about-card">
       <div class="problem-tag">Brand Growth</div>
-      <div class="card-icon-wrap" aria-hidden="true"><i class="fa-solid fa-arrow-trend-up"></i></div>
+      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-chart-bar"></i></div>
       <h3>Outgrowing Your Current 3PL?</h3>
       <p>Bergen's flexible infrastructure adapts with you — from startup volume to enterprise throughput — without disrupting operations.</p>
     </div>
     <div class="about-card">
       <div class="problem-tag">Global Reach</div>
-      <div class="card-icon-wrap" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-compass"></i></div>
       <h3>Selling Globally but Shipping Locally?</h3>
       <p>Fulfillment centers in the US, Canada, Mexico, UK, EU, and Asia-Pacific let you reach customers anywhere, cost-effectively.</p>
     </div>
     <div class="about-card">
       <div class="problem-tag">Full Visibility</div>
-      <div class="card-icon-wrap" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-eye"></i></div>
       <h3>No Real-Time Inventory Visibility?</h3>
       <p>Our CloudX WMS gives you live inventory tracking, order status, and reporting across all channels — 24/7, from any device.</p>
     </div>
     <div class="about-card">
       <div class="problem-tag">Multichannel</div>
-      <div class="card-icon-wrap" aria-hidden="true"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-share-network"></i></div>
       <h3>Managing Multiple Sales Channels?</h3>
       <p>DTC, wholesale, retail, and marketplace distribution — Bergen's omnichannel fulfillment keeps every channel synchronized.</p>
     </div>
     <div class="about-card">
       <div class="problem-tag">Brand Experience</div>
-      <div class="card-icon-wrap" aria-hidden="true"><i class="fa-solid fa-gift"></i></div>
+      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-gift"></i></div>
       <h3>Unboxing Experience Falling Flat?</h3>
       <p>Custom kitting, branded packaging, embroidery, and gift wrapping elevate your brand at every customer touchpoint.</p>
     </div>
     <div class="about-card">
       <div class="problem-tag">Integration</div>
-      <div class="card-icon-wrap" aria-hidden="true"><i class="fa-solid fa-link"></i></div>
+      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-link"></i></div>
       <h3>Tech Stack That Doesn't Connect?</h3>
       <p>50+ native integrations with Shopify, WooCommerce, Magento, ERPs, and more — plus an in-house dev team for custom builds.</p>
     </div>
@@ -904,42 +964,42 @@ footer {
   <p class="section-sub anim-fade-up">A full suite of fulfillment solutions designed to scale with your brand at every stage of growth.</p>
   <div class="solutions-grid anim-stagger">
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-arrows-rotate"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-link"></i></div>
       <h3>Omnichannel Fulfillment</h3>
       <p>Seamless distribution across e-commerce, wholesale, retail, and marketplaces from one platform.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-cart-shopping"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-storefront"></i></div>
       <h3>E-Commerce Fulfillment</h3>
       <p>Fast, accurate DTC order fulfillment with 95% on-time 2-day shipping and 99.5% accuracy.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-box-open"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-package"></i></div>
       <h3>Subscription Box Services</h3>
       <p>Custom subscription fulfillment with kitting, assembly, and branded packaging at scale.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-fill ph-star"></i></div>
       <h3>Value-Added Services</h3>
       <p>Kitting, embroidery, gift wrap, labeling, steaming, custom pack-outs — at every step.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-briefcase"></i></div>
       <h3>Back-Office Support</h3>
       <p>EDI integration, chargebacks, compliance, customs, and admin support to reduce overhead.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-ship"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-compass"></i></div>
       <h3>Freight Solutions</h3>
       <p>In-house freight forwarding and customs brokerage with competitive rates globally.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-rotate-left"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-arrow-counter-clockwise"></i></div>
       <h3>Returns Management</h3>
       <p>Efficient, brand-right returns processing that protects inventory and customer relationships.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="fa-solid fa-server"></i></div>
+      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-hard-drive"></i></div>
       <h3>CloudX WMS Technology</h3>
       <p>Proprietary warehouse management with real-time visibility across every global facility.</p>
     </div>
@@ -956,7 +1016,7 @@ footer {
   <div class="testimonials-grid anim-stagger">
     <div class="testimonial-card">
       <div class="stars" aria-label="5 out of 5 stars">
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
       </div>
       <div class="quote-mark" aria-hidden="true">"</div>
       <blockquote>Since making the switch to Bergen, our team has been able to focus on the important tasks that will help our business grow and our customer satisfaction has significantly improved thanks to their timely fulfillment. We could not have found a better home!</blockquote>
@@ -970,7 +1030,7 @@ footer {
     </div>
     <div class="testimonial-card">
       <div class="stars" aria-label="5 out of 5 stars">
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
       </div>
       <div class="quote-mark" aria-hidden="true">"</div>
       <blockquote>Bergen Logistics has been an amazing partner since Day 1. They have proven to be incredibly supportive, responsive, and agile; scaling up alongside our company as we have expanded. We could not have asked for a better logistics partner.</blockquote>
@@ -984,7 +1044,7 @@ footer {
     </div>
     <div class="testimonial-card">
       <div class="stars" aria-label="5 out of 5 stars">
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
       </div>
       <div class="quote-mark" aria-hidden="true">"</div>
       <blockquote>I have been working with Bergen Logistics since the beginning of my company in 2011. They are simply the best at what they do and have continued to evolve in this digital age of retail.</blockquote>
@@ -1017,19 +1077,19 @@ footer {
     </div>
     <div class="awards-grid">
       <div class="award-item">
-        <div class="award-icon-wrap" aria-hidden="true"><i class="fa-solid fa-medal"></i></div>
+        <div class="award-icon-wrap" aria-hidden="true"><i class="ph-fill ph-star"></i></div>
         <p>Top 3PL Provider Award</p>
       </div>
       <div class="award-item">
-        <div class="award-icon-wrap" aria-hidden="true"><i class="fa-solid fa-trophy"></i></div>
+        <div class="award-icon-wrap" aria-hidden="true"><i class="ph-light ph-trophy"></i></div>
         <p>Supply Chain Excellence Award</p>
       </div>
       <div class="award-item">
-        <div class="award-icon-wrap" aria-hidden="true"><i class="fa-solid fa-leaf"></i></div>
+        <div class="award-icon-wrap" aria-hidden="true"><i class="ph-light ph-leaf"></i></div>
         <p>Green Supply Chain Award</p>
       </div>
       <div class="award-item">
-        <div class="award-icon-wrap" aria-hidden="true"><i class="fa-solid fa-award"></i></div>
+        <div class="award-icon-wrap" aria-hidden="true"><i class="ph-light ph-diamond"></i></div>
         <p>Best-in-Class 3PL Services</p>
       </div>
     </div>
@@ -1047,13 +1107,13 @@ footer {
   </div>
   <div class="integrations-grid anim-stagger">
     <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-brands fa-shopify"></i></div>Shopify</div>
-    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-solid fa-store"></i></div>Magento</div>
+    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="ph-light ph-buildings"></i></div>Magento</div>
     <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-brands fa-wordpress"></i></div>WooCommerce</div>
-    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-solid fa-chart-pie"></i></div>NetSuite</div>
-    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-solid fa-rotate-left"></i></div>Loop Returns</div>
-    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></div>ShipStation</div>
+    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="ph-light ph-chart-bar"></i></div>NetSuite</div>
+    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="ph-light ph-arrow-counter-clockwise"></i></div>Loop Returns</div>
+    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="ph-light ph-paper-plane-tilt"></i></div>ShipStation</div>
     <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-brands fa-amazon"></i></div>Amazon</div>
-    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-solid fa-circle-plus"></i></div>50+ More</div>
+    <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="ph-light ph-plus-circle"></i></div>50+ More</div>
   </div>
   <p class="integrations-more">Don't see your platform? Our team builds <strong>custom integrations</strong> for any tech stack.</p>
   </div><!-- /section-inner -->
@@ -1066,7 +1126,7 @@ footer {
   <p>Join 2,000+ brands that trust Bergen to deliver on time, every time — globally.</p>
   <div class="cta-buttons">
     <a href="#consultation" class="btn-cta-primary">
-      Talk to a 3PL Expert <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      Talk to a 3PL Expert <i class="ph-light ph-arrow-right" aria-hidden="true"></i>
     </a>
     
   </div>
