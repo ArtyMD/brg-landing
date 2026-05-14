@@ -45,7 +45,7 @@ html { scroll-behavior: smooth; }
   --gray-600:    #4A5368;
   --font-head:   'Euclid Circular A', sans-serif;
   --font-body:   'Poppins', sans-serif;
-  --r-sm: 6px; --r-md: 6px; --r-lg: 6px; --r-xl: 6px;
+  --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-xl: 16px;
   --sh-sm: 0 1px 3px rgba(18,76,158,.08), 0 1px 2px rgba(18,76,158,.04);
   --sh-md: 0 4px 16px rgba(18,76,158,.12), 0 2px 6px rgba(18,76,158,.06);
   --sh-lg: 0 16px 48px rgba(18,76,158,.18), 0 4px 16px rgba(18,76,158,.10);
@@ -233,11 +233,7 @@ nav {
   position: relative; z-index: 2;
   overflow: hidden;
 }
-.form-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--orange) 0%, var(--navy) 100%);
-}
+
 .form-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
 .form-card h3 { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; line-height: 1.25; }
 .form-card .form-sub { font-size: 14px; color: var(--gray-400); margin-bottom: 22px; line-height: 1.5; }
@@ -355,7 +351,7 @@ section { padding: 80px 0; }
 }
 .problem-tag {
   grid-column: 1; grid-row: 1; align-self: auto;
-  display: inline-flex; align-items: center;
+  display: contents; align-items: center;
   font-size: 10px; font-weight: 700;
   background: var(--orange-pale); color: var(--orange);
   border-radius: 4px; padding: 3px 8px;
@@ -386,7 +382,7 @@ section { padding: 80px 0; }
 .solutions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
 .solution-card {
   background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
-  border-radius: var(--r-lg); padding: 26px 22px; text-align: center;
+  border-radius: var(--r-lg); padding: 26px 22px; text-align: left;
   display: flex; flex-direction: column; justify-content: center; min-height: 130px;
   transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
 }
@@ -805,7 +801,7 @@ footer {
   <!-- FORM -->
   <div class="form-card anim-slide-right" id="consultation">
     <!-- <div class="form-eyebrow">Free Consultation</div> -->
-    <h3>Get a Fulfillment Plan <br> for Your Brand</h3>
+    <h3>Get a Fulfillment Plan</h3>
     <p class="form-sub">We'll respond within 1 business day</p>
 
     <div id="form-container">
@@ -868,7 +864,7 @@ footer {
       </div>
       <div class="form-group">
         <label for="message">Tell us about your business needs *</label>
-        <textarea id="message" placeholder="Describe your current setup, order volume, regions, or key challenges..." required oninput="clearError('message')"></textarea>
+        <textarea id="message" placeholder="Describe your current setup, order volume, regions, or key challenges" required oninput="clearError('message')"></textarea>
         <span class="field-error" id="err-message">Please describe your business in at least 5 words.</span>
       </div>
       <button class="btn-primary" onclick="handleSubmit()" aria-label="Submit consultation request">
@@ -907,14 +903,14 @@ footer {
 </p>
   <div class="about-grid anim-stagger">
     <div class="about-card">
-      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-chart-bar"></i></div>
+      
       <div class="problem-tag">Brand Growth</div>
       <h3>Outgrowing Your Current 3PL?</h3>
       <p>Bergen's flexible infrastructure adapts with you, from startup volume to enterprise throughput, without disrupting daily fulfillment.
 </p>
     </div>
     <div class="about-card">
-      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-compass"></i></div>
+      
       <div class="problem-tag">Global Reach</div>
       <h3>Expanding Into New Markets?
 </h3>
@@ -922,26 +918,26 @@ footer {
 </p>
     </div>
     <div class="about-card">
-      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-eye"></i></div>
+      
       <div class="problem-tag">Full Visibility</div>
       <h3>No Real-Time Inventory Visibility?</h3>
       <p>CloudX WMS keeps inventory, order status, and fulfillment reporting visible across channels, 24/7 from any device.</p>
     </div>
     <div class="about-card">
-      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-share-network"></i></div>
+      
       <div class="problem-tag">Multichannel</div>
       <h3>Managing Multiple Sales Channels?</h3>
       <p>Bergen keeps DTC, wholesale, retail, and marketplace orders connected through one omnichannel fulfillment operation.</p>
     </div>
     <div class="about-card">
-      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-gift"></i></div>
+     
       <div class="problem-tag">Brand Experience</div>
       <h3>Unboxing Experience Falling Flat?</h3>
       <p>Custom kitting, branded packaging, embroidery, and gift wrapping elevate your brand with every order
 .</p>
     </div>
     <div class="about-card">
-      <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-link"></i></div>
+      
       <div class="problem-tag">Integration</div>
       <h3>Tech Stack That Doesn't Connect?</h3>
       <p>50+ native integrations with Shopify, WooCommerce, Magento, ERPs, and more — plus an in-house dev team for custom builds.</p>
