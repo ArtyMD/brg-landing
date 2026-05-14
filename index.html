@@ -8,13 +8,16 @@
 <meta property="og:description" content="Trusted by 2,000+ brands. Omnichannel fulfillment, real-time inventory, white-glove service. Get a free quote today.">
 <meta property="og:type" content="website">
 <title>Bergen Logistics — Your Global 3PL Partner</title>
+<link rel="icon" type="image/svg+xml" href="fav_icon.svg">
 
 <!-- Google Tag Manager placeholder — replace with real GTM snippet -->
 <script>/* (function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXX'); */</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=euclid-circular-a@400,500,600,700,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
@@ -23,7 +26,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 /* ── SCROLL OFFSET — compensates for sticky nav ── */
 html { scroll-behavior: smooth; }
-[id] { scroll-margin-top: 80px; }
+[id] { scroll-margin-top: 120px; }
 
 :root {
   --navy:        rgb(18, 76, 158);
@@ -40,9 +43,9 @@ html { scroll-behavior: smooth; }
   --gray-200:    #DDE1EE;
   --gray-400:    #8A94AD;
   --gray-600:    #4A5368;
-  --font-head:   'Sora', sans-serif;
+  --font-head:   'Euclid Circular A', sans-serif;
   --font-body:   'Poppins', sans-serif;
-  --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-xl: 24px;
+  --r-sm: 6px; --r-md: 6px; --r-lg: 6px; --r-xl: 6px;
   --sh-sm: 0 1px 3px rgba(18,76,158,.08), 0 1px 2px rgba(18,76,158,.04);
   --sh-md: 0 4px 16px rgba(18,76,158,.12), 0 2px 6px rgba(18,76,158,.06);
   --sh-lg: 0 16px 48px rgba(18,76,158,.18), 0 4px 16px rgba(18,76,158,.10);
@@ -100,7 +103,6 @@ nav {
   border: 1.5px solid rgba(255,255,255,.35);
   text-decoration: none; transition: background .2s, border-color .2s;
 }
-.nav-phone:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); color: #fff; }
 .nav-phone i { font-size: 12px; }
 .nav-cta {
   background: linear-gradient(135deg, #f7803a 0%, var(--orange-dark) 100%);
@@ -226,7 +228,7 @@ nav {
 .form-card {
   background: #fff;
   border-radius: var(--r-xl);
-  padding: 36px 32px;
+  padding: 20px 16px;
   box-shadow: 0 24px 64px rgba(10,48,102,.22), 0 4px 20px rgba(10,48,102,.1), 0 0 0 1px rgba(255,255,255,.15);
   position: relative; z-index: 2;
   overflow: hidden;
@@ -247,7 +249,7 @@ nav {
   border: 1.5px solid var(--gray-200); border-radius: var(--r-md);
   font-size: 14px; color: var(--text-dark); font-family: var(--font-body);
   background: var(--white); transition: border-color .15s, box-shadow .15s;
-  outline: none; appearance: none;
+  outline: none; -webkit-appearance: none; -moz-appearance: none; appearance: none;
 }
 .form-group input:focus, .form-group select:focus {
   border-color: var(--blue); box-shadow: 0 0 0 3px rgba(29,95,212,.1);
@@ -256,7 +258,7 @@ nav {
 .form-group select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A94AD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 14px center;
-  padding-right: 36px; cursor: pointer;
+  padding-right: 36px; cursor: pointer; border-radius: var(--r-md);
 }
 .phone-input-row { display: flex; gap: 8px; }
 .phone-input-row select { width: auto; min-width: 96px; flex: 0 0 auto; }
@@ -333,7 +335,7 @@ section { padding: 80px 0; }
   background: linear-gradient(90deg, var(--orange), rgba(242,100,25,.3));
 }
 .section-title { font-family: var(--font-head); font-size: 38px; font-weight: 700; color: var(--text-dark); line-height: 1.12; margin-bottom: 14px; letter-spacing: -.6px; }
-.section-sub { font-size: 17px; color: var(--gray-600); max-width: 580px; line-height: 1.7; margin-bottom: 48px; }
+.section-sub { font-size: 17px; color: var(--gray-600); max-width: 1050px; line-height: 1.7; margin-bottom: 48px; }
 
 /* ── PROBLEMS ── */
 .problems-section { background: var(--off-white); }
@@ -343,6 +345,7 @@ section { padding: 80px 0; }
   border: 1px solid var(--gray-200);
   transition: border-color .3s, box-shadow .3s, transform .3s;
   position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr auto; column-gap: 12px;
 }
 .about-card::before {
   content: ''; position: absolute; left: 0; top: 12%; bottom: 12%;
@@ -350,26 +353,25 @@ section { padding: 80px 0; }
   background: linear-gradient(180deg, var(--orange), var(--navy));
   opacity: 0; transition: opacity .3s;
 }
-.about-card:hover { border-color: rgba(18,76,158,.18); box-shadow: 0 12px 40px rgba(18,76,158,.1), 0 2px 8px rgba(18,76,158,.06); transform: translateY(-4px); }
-.about-card:hover::before { opacity: 1; }
 .problem-tag {
-  display: inline-block; font-size: 10px; font-weight: 700;
+  grid-column: 1; grid-row: 1; align-self: auto;
+  display: inline-flex; align-items: center;
+  font-size: 10px; font-weight: 700;
   background: var(--orange-pale); color: var(--orange);
-  border-radius: 4px; padding: 3px 8px; margin-bottom: 16px;
+  border-radius: 4px; padding: 3px 8px;
   letter-spacing: .8px; text-transform: uppercase;
 }
 .card-icon-wrap {
+  grid-column: 2; grid-row: 1; align-self: center;
   width: 48px; height: 48px; border-radius: var(--r-md);
   background: linear-gradient(135deg, rgba(18,76,158,.08) 0%, rgba(18,76,158,.03) 100%);
   border: 1px solid rgba(18,76,158,.12);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
   transition: background .3s, border-color .3s;
 }
 .card-icon-wrap i { font-size: 20px; color: var(--navy); transition: color .3s; }
-.about-card:hover .card-icon-wrap { background: linear-gradient(135deg, rgba(242,100,25,.1) 0%, rgba(242,100,25,.04) 100%); border-color: rgba(242,100,25,.22); }
-.about-card:hover .card-icon-wrap i { color: var(--orange); }
-.about-card h3 { font-family: var(--font-head); font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
-.about-card p { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
+.about-card h3 { grid-column: 1 / -1; font-family: var(--font-head); font-size: 15px; font-weight: 600; color: var(--text-dark); margin-top: 14px; margin-bottom: 8px; }
+.about-card p { grid-column: 1 / -1; font-size: 13px; color: var(--gray-600); line-height: 1.65; }
 
 /* ── SOLUTIONS ── */
 .solutions-section { background: var(--navy); position: relative; overflow: hidden; }
@@ -384,18 +386,10 @@ section { padding: 80px 0; }
 .solutions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
 .solution-card {
   background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
-  border-radius: var(--r-lg); padding: 26px 22px;
+  border-radius: var(--r-lg); padding: 26px 22px; text-align: center;
+  display: flex; flex-direction: column; justify-content: center; min-height: 130px;
   transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
 }
-.solution-card:hover { background: rgba(242,100,25,.08); border-color: rgba(242,100,25,.38); box-shadow: 0 12px 32px rgba(0,0,0,.18); transform: translateY(-3px); }
-.s-icon-wrap {
-  width: 44px; height: 44px; border-radius: var(--r-md);
-  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
-}
-.s-icon-wrap i { font-size: 18px; color: rgba(255,255,255,.8); }
-.solution-card:hover .s-icon-wrap { background: rgba(242,100,25,.15); border-color: rgba(242,100,25,.3); }
-.solution-card:hover .s-icon-wrap i { color: var(--orange); }
 .solution-card h3 { font-family: var(--font-head); font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
 .solution-card p { font-size: 12px; color: rgba(255,255,255,.45); line-height: 1.6; }
 
@@ -407,7 +401,6 @@ section { padding: 80px 0; }
   border: 1px solid var(--gray-200);
   transition: box-shadow .3s, transform .3s, border-color .3s;
 }
-.testimonial-card:hover { box-shadow: 0 12px 36px rgba(18,76,158,.1); transform: translateY(-3px); border-color: rgba(18,76,158,.15); }
 .stars { display: flex; gap: 3px; margin-bottom: 16px; }
 .stars i { font-size: 14px; color: var(--orange); }
 .quote-mark { font-size: 52px; line-height: .75; color: var(--orange); font-family: Georgia, serif; margin-bottom: 10px; opacity: .35; }
@@ -432,7 +425,6 @@ section { padding: 80px 0; }
   border-radius: var(--r-md); padding: 22px 16px; text-align: center;
   transition: box-shadow .3s, border-color .3s, transform .3s;
 }
-.award-item:hover { box-shadow: 0 8px 28px rgba(18,76,158,.1); border-color: rgba(242,100,25,.3); transform: translateY(-3px); }
 .award-icon-wrap {
   width: 52px; height: 52px; border-radius: 50%;
   background: linear-gradient(135deg, rgba(18,76,158,.07) 0%, rgba(18,76,158,.03) 100%);
@@ -442,8 +434,6 @@ section { padding: 80px 0; }
   transition: background .3s, border-color .3s;
 }
 .award-icon-wrap i { font-size: 22px; color: var(--navy); transition: color .3s; }
-.award-item:hover .award-icon-wrap { background: linear-gradient(135deg, rgba(242,100,25,.1) 0%, rgba(242,100,25,.04) 100%); border-color: rgba(242,100,25,.22); }
-.award-item:hover .award-icon-wrap i { color: var(--orange); }
 .award-item p { font-size: 12px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
 .media-row { display: flex; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
 .media-label { font-size: 13px; color: var(--gray-600); margin-right: 4px; }
@@ -462,10 +452,8 @@ section { padding: 80px 0; }
   font-size: 11px; font-weight: 600; color: var(--text-dark);
   transition: border-color .25s, box-shadow .25s, transform .25s;
 }
-.integration-chip:hover { border-color: rgba(242,100,25,.4); box-shadow: 0 6px 18px rgba(242,100,25,.12); transform: translateY(-2px); }
 .i-icon-wrap { margin-bottom: 8px; }
-.i-icon-wrap i { font-size: 22px; color: var(--navy); transition: color .25s; }
-.integration-chip:hover .i-icon-wrap i { color: var(--orange); }
+.i-icon-wrap i { font-size: 22px; color: var(--navy); }
 .integrations-more { text-align: center; margin-top: 22px; font-size: 14px; color: var(--gray-600); }
 .integrations-more strong { color: var(--orange); }
 
@@ -816,9 +804,9 @@ footer {
 
   <!-- FORM -->
   <div class="form-card anim-slide-right" id="consultation">
-    <div class="form-eyebrow">Free Consultation</div>
-    <h3>Talk to a 3PL Expert Today</h3>
-    <p class="form-sub">We'll respond within 1 business day with a custom fulfillment plan.</p>
+    <!-- <div class="form-eyebrow">Free Consultation</div> -->
+    <h3>Get a Fulfillment Plan <br> for Your Brand</h3>
+    <p class="form-sub">We'll respond within 1 business day</p>
 
     <div id="form-container">
       <div class="form-row">
@@ -880,11 +868,12 @@ footer {
       </div>
       <div class="form-group">
         <label for="message">Tell us about your business needs *</label>
-        <textarea id="message" placeholder="Briefly describe your brand, current order volume, fulfillment challenges, and what you're looking for in a 3PL partner..." required oninput="clearError('message')"></textarea>
+        <textarea id="message" placeholder="Describe your current setup, order volume, regions, or key challenges..." required oninput="clearError('message')"></textarea>
         <span class="field-error" id="err-message">Please describe your business in at least 5 words.</span>
       </div>
       <button class="btn-primary" onclick="handleSubmit()" aria-label="Submit consultation request">
-        Request a Consultation <i class="ph-light ph-arrow-right" aria-hidden="true"></i>
+        Request a Consultation 
+        <!-- <i class="ph-light ph-arrow-right" aria-hidden="true"></i> -->
       </button>
       <p class="form-trust"><i class="ph-light ph-lock-simple" aria-hidden="true"></i> No spam. Your info stays private.</p>
     </div>
@@ -914,41 +903,46 @@ footer {
   <div class="section-inner">
   <!-- <div class="section-label anim-fade-up">Who We Help</div> -->
   <h2 class="section-title anim-fade-up" id="problems-title">Stop Letting Logistics Hold Your Brand Back</h2>
-  <p class="section-sub anim-fade-up">Built for fashion, apparel, cosmetics, footwear, and lifestyle brands — Bergen eliminates the operational complexity that slows growth.</p>
+  <p class="section-sub anim-fade-up">Bergen Logistics helps fashion, beauty, footwear, and lifestyle brands manage warehousing, fulfillment, and omnichannel operations behind every order. 
+</p>
   <div class="about-grid anim-stagger">
     <div class="about-card">
-      <div class="problem-tag">Brand Growth</div>
       <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-chart-bar"></i></div>
+      <div class="problem-tag">Brand Growth</div>
       <h3>Outgrowing Your Current 3PL?</h3>
-      <p>Bergen's flexible infrastructure adapts with you — from startup volume to enterprise throughput — without disrupting operations.</p>
+      <p>Bergen's flexible infrastructure adapts with you, from startup volume to enterprise throughput, without disrupting daily fulfillment.
+</p>
     </div>
     <div class="about-card">
-      <div class="problem-tag">Global Reach</div>
       <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-compass"></i></div>
-      <h3>Selling Globally but Shipping Locally?</h3>
-      <p>Fulfillment centers in the US, Canada, Mexico, UK, EU, and Asia-Pacific let you reach customers anywhere, cost-effectively.</p>
+      <div class="problem-tag">Global Reach</div>
+      <h3>Expanding Into New Markets?
+</h3>
+      <p>Regional fulfillment centers put your brand closer to customers across North America, Europe, and Asia-Pacific
+</p>
     </div>
     <div class="about-card">
-      <div class="problem-tag">Full Visibility</div>
       <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-eye"></i></div>
+      <div class="problem-tag">Full Visibility</div>
       <h3>No Real-Time Inventory Visibility?</h3>
-      <p>Our CloudX WMS gives you live inventory tracking, order status, and reporting across all channels — 24/7, from any device.</p>
+      <p>CloudX WMS keeps inventory, order status, and fulfillment reporting visible across channels, 24/7 from any device.</p>
     </div>
     <div class="about-card">
-      <div class="problem-tag">Multichannel</div>
       <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-share-network"></i></div>
+      <div class="problem-tag">Multichannel</div>
       <h3>Managing Multiple Sales Channels?</h3>
-      <p>DTC, wholesale, retail, and marketplace distribution — Bergen's omnichannel fulfillment keeps every channel synchronized.</p>
+      <p>Bergen keeps DTC, wholesale, retail, and marketplace orders connected through one omnichannel fulfillment operation.</p>
     </div>
     <div class="about-card">
-      <div class="problem-tag">Brand Experience</div>
       <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-gift"></i></div>
+      <div class="problem-tag">Brand Experience</div>
       <h3>Unboxing Experience Falling Flat?</h3>
-      <p>Custom kitting, branded packaging, embroidery, and gift wrapping elevate your brand at every customer touchpoint.</p>
+      <p>Custom kitting, branded packaging, embroidery, and gift wrapping elevate your brand with every order
+.</p>
     </div>
     <div class="about-card">
-      <div class="problem-tag">Integration</div>
       <div class="card-icon-wrap" aria-hidden="true"><i class="ph-light ph-link"></i></div>
+      <div class="problem-tag">Integration</div>
       <h3>Tech Stack That Doesn't Connect?</h3>
       <p>50+ native integrations with Shopify, WooCommerce, Magento, ERPs, and more — plus an in-house dev team for custom builds.</p>
     </div>
@@ -959,49 +953,41 @@ footer {
 <!-- SOLUTIONS -->
 <section class="solutions-section" aria-labelledby="solutions-title">
   <div class="section-inner">
-  <div class="section-label anim-fade-up">Our Capabilities</div>
+  <!-- <div class="section-label anim-fade-up">Our Capabilities</div> -->
   <h2 class="section-title anim-fade-up" id="solutions-title">Everything You Need, Under One Roof</h2>
-  <p class="section-sub anim-fade-up">A full suite of fulfillment solutions designed to scale with your brand at every stage of growth.</p>
+  <p class="section-sub anim-fade-up">Bergen Logistics brings fulfillment, returns, freight, back-office support, and warehouse technology together in one place.</p>
   <div class="solutions-grid anim-stagger">
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-link"></i></div>
       <h3>Omnichannel Fulfillment</h3>
-      <p>Seamless distribution across e-commerce, wholesale, retail, and marketplaces from one platform.</p>
+      <p>E-commerce, wholesale, retail, and marketplace orders managed through one platform.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-storefront"></i></div>
       <h3>E-Commerce Fulfillment</h3>
-      <p>Fast, accurate DTC order fulfillment with 95% on-time 2-day shipping and 99.5% accuracy.</p>
+      <p>2-day delivery, 95% on-time shipping, and 99.5% order accuracy for online orders.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-package"></i></div>
       <h3>Subscription Box Services</h3>
-      <p>Custom subscription fulfillment with kitting, assembly, and branded packaging at scale.</p>
+      <p>Custom kitting, assembly, and branded packaging for recurring orders.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-fill ph-star"></i></div>
       <h3>Value-Added Services</h3>
-      <p>Kitting, embroidery, gift wrap, labeling, steaming, custom pack-outs — at every step.</p>
+      <p>Custom packing, labeling, steaming, embroidery, and gift wrapping for brand-ready orders.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-briefcase"></i></div>
       <h3>Back-Office Support</h3>
-      <p>EDI integration, chargebacks, compliance, customs, and admin support to reduce overhead.</p>
+      <p>EDI, customs, and retail compliance to reduce manual work, chargebacks, and fulfillment delays.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-compass"></i></div>
       <h3>Freight Solutions</h3>
-      <p>In-house freight forwarding and customs brokerage with competitive rates globally.</p>
+      <p>In-house freight forwarding and customs brokerage for inbound, outbound, and cross-border shipments.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-arrow-counter-clockwise"></i></div>
       <h3>Returns Management</h3>
-      <p>Efficient, brand-right returns processing that protects inventory and customer relationships.</p>
+      <p>Returns processing that protects inventory, reduces friction, and improves the customer experience.</p>
     </div>
     <div class="solution-card">
-      <div class="s-icon-wrap" aria-hidden="true"><i class="ph-light ph-hard-drive"></i></div>
       <h3>CloudX WMS Technology</h3>
-      <p>Proprietary warehouse management with real-time visibility across every global facility.</p>
+      <p>Real-time inventory, order status, and reporting through Bergen Logistics proprietary WMS.</p>
     </div>
   </div>
   </div><!-- /section-inner -->
@@ -1126,7 +1112,8 @@ footer {
   <p>Join 2,000+ brands that trust Bergen to deliver on time, every time — globally.</p>
   <div class="cta-buttons">
     <a href="#consultation" class="btn-cta-primary">
-      Talk to a 3PL Expert <i class="ph-light ph-arrow-right" aria-hidden="true"></i>
+      Talk to a 3PL Expert 
+      <i class="ph-light ph-arrow-right" aria-hidden="true"></i>
     </a>
     
   </div>
@@ -1137,9 +1124,7 @@ footer {
 <footer>
   <div class="footer-inner">
   <div class="footer-logo">
-    <img src="/logo.png" alt="Bergen Logistics"
-         onerror="this.style.display='none'; document.getElementById('footer-logo-text').style.display='block'">
-    <span id="footer-logo-text" style="display:none;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:rgba(255,255,255,0.75)">Bergen Logistics</span>
+    <img src="logo.svg" alt="Bergen Logistics">
   </div>
   <div class="footer-copy">© 2026 Bergen Logistics. All rights reserved.</div>
   <!-- <nav class="footer-links" aria-label="Footer links">
