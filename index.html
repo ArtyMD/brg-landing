@@ -304,12 +304,15 @@
         padding: 0 var(--gutter);
         display: grid;
         grid-template-columns: 1fr 400px;
-        grid-template-rows: 1fr 550px;
+        grid-template-rows: 1fr 450px;
         column-gap: 56px;
         row-gap: 0;
-        align-items: start;
         position: relative;
         z-index: 1;
+        align-content: space-around;
+        justify-content: center;
+        align-items: start;
+        justify-items: stretch;
       }
       .hero-top {
         grid-column: 1;
@@ -532,6 +535,9 @@
       .form-group input::placeholder {
         color: var(--gray-400);
       }
+      .form-group select:has(option[value=""]:checked) { color: var(--gray-400); }
+      .form-group select option[value=""] { color: var(--gray-400); }
+      .form-group select option:not([value=""]) { color: var(--text-dark); }
       .form-group select {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A94AD' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
@@ -1757,8 +1763,8 @@
                 <i class="ph-light ph-buildings"></i>
               </div>
               <div class="diff-content">
-                <h4>US, Europe &amp; Asia Locations</h4>
-                <p>Global fulfillment across 3 continents</p>
+                <h4>Multi-Regional 3PL Solutions</h4>
+                <p>US, EU, UK & Asia coverage</p>
               </div>
             </div>
             <div class="diff-item">
@@ -1767,7 +1773,7 @@
               </div>
               <div class="diff-content">
                 <h4>Omnichannel Fulfillment</h4>
-                <p>E-commerce, wholesale, retail &amp; dropship</p>
+                <p>E-commerce, wholesale, retail</p>
               </div>
             </div>
             <div class="diff-item">
@@ -1776,16 +1782,16 @@
               </div>
               <div class="diff-content">
                 <h4>Proprietary CloudX WMS</h4>
-                <p>Real-time visibility &amp; 50+ integrations</p>
+                <p>Real-time visibility and integrations</p>
               </div>
             </div>
             <div class="diff-item">
               <div class="diff-icon" aria-hidden="true">
-                <i class="ph-light ph-target"></i>
+                <i class="ph-light ph-trend-up"></i>
               </div>
               <div class="diff-content">
-                <h4>99.5% Order Accuracy</h4>
-                <p>Industry-leading precision every shipment</p>
+                <h4>Scalable 3PL Support</h4>
+                <p>For omnichannel brands</p>
               </div>
             </div>
           </div>
@@ -2137,7 +2143,8 @@
           Trusted by Leading Brands
         </h2>
         <p class="section-sub anim-fade-up">
-          See how fashion and lifestyle brands rely on Bergen for fulfillment, operations, and customer experience.
+          See how fashion and lifestyle brands rely on Bergen for fulfillment,
+          operations, and customer experience.
         </p>
         <div class="testimonials-grid anim-stagger">
           <div class="testimonial-card">
