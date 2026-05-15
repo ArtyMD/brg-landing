@@ -320,16 +320,16 @@ section { padding: 80px 0; }
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
-.section-label {
+/* .section-label {
   font-size: 11px; font-weight: 700; letter-spacing: 2px;
   text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
   display: inline-flex; align-items: center; gap: 8px;
-}
-.section-label::before {
+} */
+/* .section-label::before {
   content: ''; display: inline-block;
   width: 18px; height: 2px; border-radius: 1px;
   background: linear-gradient(90deg, var(--orange), rgba(242,100,25,.3));
-}
+} */
 .section-title { font-family: var(--font-head); font-size: 38px; font-weight: 700; color: var(--text-dark); line-height: 1.12; margin-bottom: 14px; letter-spacing: -.6px; }
 .section-sub { font-size: 17px; color: var(--gray-600); max-width: 1050px; line-height: 1.7; margin-bottom: 48px; }
 
@@ -430,8 +430,11 @@ section { padding: 80px 0; }
   margin: 0 auto 10px;
   transition: background .3s, border-color .3s;
 }
+
+.award-subtext { font-size: 10px; color: var(--gray-400); margin-top: 6px; }
+
 .award-icon-wrap i { font-size: 22px; color: var(--navy); transition: color .3s; }
-.award-item p { font-size: 12px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
+.award-item p { font-size: 11px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
 .media-row { display: flex; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
 .media-label { font-size: 13px; color: var(--gray-600); margin-right: 4px; }
 .media-badge {
@@ -440,11 +443,12 @@ section { padding: 80px 0; }
   padding: 5px 12px; border-radius: var(--r-sm); letter-spacing: .5px;
 }
 
+
 /* ── INTEGRATIONS ── */
 .integrations-section { background: var(--white); }
 .integrations-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 14px; }
 .integration-chip {
-  background: var(--off-white); border: 1px solid var(--gray-200);
+  /* background: var(--off-white); border: 1px solid var(--gray-200); */
   border-radius: var(--r-md); padding: 16px 10px; text-align: center;
   font-size: 11px; font-weight: 600; color: var(--text-dark);
   transition: border-color .25s, box-shadow .25s, transform .25s;
@@ -510,7 +514,7 @@ footer {
   flex-wrap: wrap; gap: 16px;
 }
 .footer-logo { display: flex; align-items: center; }
-.footer-logo img { height: 32px; width: auto; opacity: .8; }
+.footer-logo img { height: 80px; width: auto; opacity: .8; }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { color: rgba(255,255,255,.3); font-size: 12px; text-decoration: none; transition: color .2s; }
 .footer-links a:hover { color: rgba(255,255,255,.7); }
@@ -993,7 +997,7 @@ footer {
 <!-- TESTIMONIALS -->
 <section class="testimonials-section" aria-labelledby="testimonials-title">
   <div class="section-inner">
-  <div class="section-label anim-fade-up">Client Reviews</div>
+  <!-- <div class="section-label anim-fade-up">Client Reviews</div> -->
   <h2 class="section-title anim-fade-up" id="testimonials-title">Trusted by Leading Brands</h2>
   <p class="section-sub anim-fade-up">Hear from some of the fashion and lifestyle brands that call Bergen their fulfillment home.</p>
   <div class="testimonials-grid anim-stagger">
@@ -1048,32 +1052,38 @@ footer {
   <div class="section-inner">
   <div class="awards-content anim-fade-up">
     <div class="awards-left">
-      <div class="section-label">Recognition</div>
-      <h2 class="section-title" id="awards-title">Industry-Recognized Excellence</h2>
-      <p style="font-size:16px;color:var(--gray-600);line-height:1.7;margin-bottom:20px;">Consistently recognized by leading organizations for outstanding service, supply chain innovation, and sustainable logistics practices.</p>
+      <!-- <div class="section-label">Recognition</div> -->
+      <h2 class="section-title" id="awards-title">Recognition and Industry Coverage</h2>
+      <p style="font-size:16px;color:var(--gray-600);line-height:1.7;margin-bottom:20px;">Bergen Logistics earned recognition for 3PL services, warehouse technology, and sustainable supply chain practices.</p>
       <div class="media-row">
-        <span class="media-label">As seen in</span>
+        <span class="media-label">Featured by</span>
         <span class="media-badge">Bloomberg</span>
-        <span class="media-badge">Business Insider</span>
-        <span class="media-badge">Int'l Business Times</span>
+        <span class="media-badge">The Supply Chainer</span>
+        <span class="media-badge">Logistics Management</span>
+        <!-- <span class="media-badge">Business Insider</span> -->
+        <!-- <span class="media-badge">Int'l Business Times</span> -->
       </div>
     </div>
     <div class="awards-grid">
       <div class="award-item">
         <div class="award-icon-wrap" aria-hidden="true"><i class="ph-fill ph-star"></i></div>
-        <p>Top 3PL Provider Award</p>
+        <p>Top 100 U.S. 3PL for 2026</p>
+        <span class="award-subtext">Fulfill.com</span>
       </div>
       <div class="award-item">
         <div class="award-icon-wrap" aria-hidden="true"><i class="ph-light ph-trophy"></i></div>
-        <p>Supply Chain Excellence Award</p>
+        <p>Top 3PL Tech Solutions Provider 2024</p>
+        <span class="award-subtext">Logistics Tech Outlook, CloudX Systems</span>
+      </div>
+      <div class="award-item">
+        <div class="award-icon-wrap" aria-hidden="true"><i class="ph-light ph-diamond"></i></div>
+        <p>Top Supply Chain Projects</p>
+        <span class="award-subtext">Supply & Demand Chain Executive</span>
       </div>
       <div class="award-item">
         <div class="award-icon-wrap" aria-hidden="true"><i class="ph-light ph-leaf"></i></div>
         <p>Green Supply Chain Award</p>
-      </div>
-      <div class="award-item">
-        <div class="award-icon-wrap" aria-hidden="true"><i class="ph-light ph-diamond"></i></div>
-        <p>Best-in-Class 3PL Services</p>
+        <span class="award-subtext">Supply & Demand Chain Executive</span>
       </div>
     </div>
   </div>
@@ -1084,9 +1094,9 @@ footer {
 <section class="integrations-section" aria-labelledby="integrations-title">
   <div class="section-inner">
   <div class="anim-fade-up" style="text-align:center;margin-bottom:16px">
-    <div class="section-label" style="text-align:center">Technology</div>
-    <h2 class="section-title" id="integrations-title" style="text-align:center">Connects With Your Entire Tech Stack</h2>
-    <p class="section-sub" style="text-align:center;margin:0 auto 48px">50+ native integrations with leading e-commerce platforms, ERPs, OMS, and marketplaces.</p>
+    <!-- <div class="section-label" style="text-align:center">Technology</div> -->
+    <h2 class="section-title" id="integrations-title" style="text-align:center">Connect the Systems Your Brand Already Uses</h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 48px">50+ native integrations with leading e-commerce platforms, ERPs, OMS, marketplaces, and shipping tools.</p>
   </div>
   <div class="integrations-grid anim-stagger">
     <div class="integration-chip"><div class="i-icon-wrap" aria-hidden="true"><i class="fa-brands fa-shopify"></i></div>Shopify</div>
@@ -1106,11 +1116,11 @@ footer {
 <section class="bottom-cta" aria-labelledby="cta-title">
   <div class="bottom-cta-inner anim-fade-up">
   <h2 id="cta-title">Ready to Scale Your Fulfillment?</h2>
-  <p>Join 2,000+ brands that trust Bergen to deliver on time, every time — globally.</p>
+  <p>Tell us about your current needs, and a Bergen Logistics 3PL expert will recommend the right next step.</p>
   <div class="cta-buttons">
     <a href="#consultation" class="btn-cta-primary">
-      Talk to a 3PL Expert 
-      <i class="ph-light ph-arrow-right" aria-hidden="true"></i>
+      Request a Consultation
+      <!-- <i class="ph-light ph-arrow-right" aria-hidden="true"></i> -->
     </a>
     
   </div>
