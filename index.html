@@ -396,11 +396,12 @@ section { padding: 80px 0; }
   background: var(--off-white); border-radius: var(--r-lg); padding: 28px 24px;
   border: 1px solid var(--gray-200);
   transition: box-shadow .3s, transform .3s, border-color .3s;
+  display: flex; flex-direction: column;
 }
+.testimonial-card blockquote { flex: 1; font-size: 14px; color: var(--gray-600); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
 .stars { display: flex; gap: 3px; margin-bottom: 16px; }
 .stars i { font-size: 14px; color: var(--orange); }
 .quote-mark { font-size: 52px; line-height: .75; color: var(--orange); font-family: Georgia, serif; margin-bottom: 10px; opacity: .35; }
-.testimonial-card blockquote { font-size: 14px; color: var(--gray-600); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
 .testimonial-footer { display: flex; align-items: center; gap: 10px; }
 .testimonial-avatar {
   width: 38px; height: 38px; border-radius: 50%;
@@ -751,8 +752,8 @@ footer {
       <div class="diff-item">
         <div class="diff-icon" aria-hidden="true"><i class="ph-light ph-buildings"></i></div>
         <div class="diff-content">
-          <h4>US, EU, UK &amp; Asia Locations</h4>
-          <p>Global fulfillment across 4 continents</p>
+          <h4>US, Europe &amp; Asia Locations</h4>
+          <p>Global fulfillment across 3 continents</p>
         </div>
       </div>
       <div class="diff-item">
@@ -801,8 +802,8 @@ footer {
   <!-- FORM -->
   <div class="form-card anim-slide-right" id="consultation">
     <!-- <div class="form-eyebrow">Free Consultation</div> -->
-    <h3>Get a Fulfillment Plan</h3>
-    <p class="form-sub">We'll respond within 1 business day</p>
+    <h3 style="padding: 0 0 20px 0;">Get a Fulfillment Plan</h3>
+    <!-- <p class="form-sub">We'll respond within 1 business day</p> -->
 
     <div id="form-container">
       <div class="form-row">
@@ -871,7 +872,7 @@ footer {
         Request a Consultation 
         <!-- <i class="ph-light ph-arrow-right" aria-hidden="true"></i> -->
       </button>
-      <p class="form-trust"><i class="ph-light ph-lock-simple" aria-hidden="true"></i> No spam. Your info stays private.</p>
+      <!-- <p class="form-trust"><i class="ph-light ph-lock-simple" aria-hidden="true"></i> No spam. Your info stays private.</p> -->
     </div>
 
     <div class="form-success" id="form-success" role="alert">
@@ -884,15 +885,15 @@ footer {
 </section>
 
 <!-- TRUST BAR -->
-<div class="trust-bar" aria-label="Trust indicators">
+<!-- <div class="trust-bar" aria-label="Trust indicators">
   <div class="trust-bar-inner anim-stagger">
-    <!-- <div class="trust-item"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Multiple Industry Awards</div>
+      <div class="trust-item"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Multiple Industry Awards</div>
     <div class="trust-item"><i class="fa-solid fa-plug" aria-hidden="true"></i> 50+ Platform Integrations</div>
     <div class="trust-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Featured in Bloomberg &amp; Business Insider</div>
     <div class="trust-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i> 95% On-Time 2-Day Shipping</div>
-    <div class="trust-item"><i class="fa-solid fa-clock" aria-hidden="true"></i> 25+ Years Experience</div> -->
+    <div class="trust-item"><i class="fa-solid fa-clock" aria-hidden="true"></i> 25+ Years Experience</div> 
   </div>
-</div>
+</div> -->
 
 <!-- PROBLEMS -->
 <section class="problems-section" aria-labelledby="problems-title">
