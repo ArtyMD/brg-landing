@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Thank You — Bergen Logistics</title>
+    <link rel="icon" type="image/svg+xml" href="fav_icon.svg" />
+
+    <!-- Start Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-56678KX");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=euclid-circular-a@400,500,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: rgb(18, 76, 158);
+        --navy-mid: rgb(14, 62, 130);
+        --navy-light: rgb(22, 90, 178);
+        --navy-dark: rgb(10, 48, 102);
+        --text-dark: #0d2444;
+        --blue: #1d5fd4;
+        --orange: #f26419;
+        --orange-dark: #d4530d;
+        --white: #ffffff;
+        --off-white: #f7f8fc;
+        --gray-200: #dde1ee;
+        --gray-400: #8a94ad;
+        --gray-600: #4a5368;
+        --font-head: "Euclid Circular A", sans-serif;
+        --font-body: "Poppins", sans-serif;
+        --r-sm: 8px;
+        --r-md: 12px;
+        --r-lg: 16px;
+        --max-w: 1200px;
+        --gutter: clamp(20px, 5vw, 64px);
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--white);
+        color: var(--text-dark);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ── NAV ── */
+      nav {
+        background: rgba(10, 50, 112, 0.93);
+        backdrop-filter: blur(24px) saturate(1.8);
+        -webkit-backdrop-filter: blur(24px) saturate(1.8);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.05),
+          0 4px 32px rgba(10, 48, 102, 0.25);
+      }
+      .nav-inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 var(--gutter);
+        max-height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      .nav-logo img {
+        height: 130px;
+        min-width: 80px;
+        max-width: 200px;
+        width: 100%;
+        display: block;
+      }
+      .nav-logo-text {
+        font-family: var(--font-head);
+        font-weight: 700;
+        font-size: 18px;
+        color: #fff;
+        letter-spacing: -0.3px;
+      }
+
+      /* ── MAIN CONTENT ── */
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px var(--gutter);
+        background: var(--off-white);
+      }
+
+      .ty-card {
+        background: var(--white);
+        border-radius: var(--r-lg);
+        box-shadow:
+          0 16px 48px rgba(18, 76, 158, 0.1),
+          0 4px 16px rgba(18, 76, 158, 0.06);
+        padding: clamp(40px, 6vw, 72px) clamp(32px, 5vw, 64px);
+        max-width: 560px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .ty-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #e8f3ff 0%, #d0e6ff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 28px;
+      }
+      .ty-icon i {
+        font-size: 32px;
+        color: var(--navy);
+      }
+
+      .ty-card h1 {
+        font-family: var(--font-head);
+        font-size: clamp(26px, 4vw, 36px);
+        font-weight: 700;
+        color: var(--text-dark);
+        letter-spacing: -0.5px;
+        margin-bottom: 14px;
+      }
+
+      .ty-card p {
+        color: var(--gray-600);
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+      }
+      .ty-card p:last-of-type {
+        margin-bottom: 36px;
+      }
+
+      .ty-divider {
+        height: 1px;
+        background: var(--gray-200);
+        margin: 32px 0;
+      }
+
+      .ty-next-steps {
+        text-align: left;
+        margin-bottom: 36px;
+      }
+      .ty-next-steps h2 {
+        font-family: var(--font-head);
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: var(--gray-400);
+        margin-bottom: 16px;
+      }
+      .ty-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+      .ty-step-num {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1px;
+      }
+      .ty-step-text {
+        font-size: 14px;
+        color: var(--gray-600);
+        line-height: 1.55;
+      }
+      .ty-step-text strong {
+        color: var(--text-dark);
+        font-weight: 600;
+      }
+
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #f7803a 0%, var(--orange-dark) 100%);
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 700;
+        padding: 14px 28px;
+        border-radius: var(--r-md);
+        text-decoration: none;
+        transition:
+          box-shadow 0.2s,
+          transform 0.15s;
+        box-shadow: 0 3px 14px rgba(242, 100, 25, 0.35);
+      }
+      .btn-back:hover {
+        box-shadow: 0 6px 22px rgba(242, 100, 25, 0.5);
+        transform: translateY(-1px);
+      }
+      .btn-back:active {
+        transform: scale(0.99);
+        box-shadow: none;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--navy-dark);
+      }
+      .footer-inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 26px var(--gutter);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .footer-logo img {
+        height: 80px;
+        width: auto;
+        opacity: 0.8;
+      }
+      .footer-copy {
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 12px;
+      }
+
+      @media (max-width: 480px) {
+        .nav-logo img {
+          height: 90px;
+        }
+        .ty-card {
+          border-radius: var(--r-md);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-56678KX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Bergen Logistics">
+          <img
+            src="logo.svg"
+            alt="Bergen Logistics"
+            onerror="
+              this.style.display = 'none';
+              document.getElementById('nav-logo-text').style.display = 'block';
+            "
+          />
+          <span id="nav-logo-text" class="nav-logo-text" style="display: none"
+            >Bergen Logistics</span
+          >
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="ty-card" role="main">
+        <div class="ty-icon" aria-hidden="true">
+          <i class="ph-light ph-check-circle"></i>
+        </div>
+
+        <h1>You're all set!</h1>
+        <p>
+          Your consultation request has been received. A Bergen Logistics expert
+          will reach out within <strong>1 business day</strong> to discuss your
+          fulfillment needs.
+        </p>
+
+        <div class="ty-divider"></div>
+
+        <div class="ty-next-steps">
+          <h2>What happens next</h2>
+          <div class="ty-step">
+            <div class="ty-step-num" aria-hidden="true">1</div>
+            <div class="ty-step-text">
+              <strong>Review</strong> — Our team reviews your inquiry and
+              matches you with the right fulfillment specialist.
+            </div>
+          </div>
+          <div class="ty-step">
+            <div class="ty-step-num" aria-hidden="true">2</div>
+            <div class="ty-step-text">
+              <strong>Reach out</strong> — You'll receive a call or email within
+              1 business day to schedule your consultation.
+            </div>
+          </div>
+          <div class="ty-step">
+            <div class="ty-step-num" aria-hidden="true">3</div>
+            <div class="ty-step-text">
+              <strong>Fulfillment plan</strong> — We build a customized
+              warehousing and fulfillment strategy tailored to your brand.
+            </div>
+          </div>
+        </div>
+
+        <a href="index.html" class="btn-back">
+          <i class="ph-light ph-arrow-left" aria-hidden="true"></i>
+          Back to Bergen Logistics
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="logo.svg" alt="Bergen Logistics" />
+        </div>
+        <div class="footer-copy">© 2026 Bergen Logistics. All rights reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html>
