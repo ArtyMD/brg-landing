@@ -2496,6 +2496,17 @@
 
         if (hasError) return;
 
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "consultation_request",
+          form_first_name: fname,
+          form_last_name: lname,
+          form_company: company,
+          form_email: email,
+          form_phone: phoneCountry + phoneDigits,
+          form_region: region,
+        });
+
         /* ── TODO: POST to your endpoint ──
   fetch('/api/leads', {
     method: 'POST',
@@ -2505,12 +2516,7 @@
   });
   */
 
-        document.getElementById("form-container").style.display = "none";
-        document.getElementById("form-success").style.display = "block";
-
-        /* ── Or redirect to thank-you page for GA conversion tracking ──
-  window.location.href = '/thank-you';
-  */
+        window.location.href = "thank-you.html";
       }
 
       /* ─────────────────────────────────────────
