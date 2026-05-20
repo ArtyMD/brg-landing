@@ -969,16 +969,19 @@
       }
       .media-row {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 8px;
         margin-top: 20px;
-        flex-wrap: wrap;
       }
       .media-label {
         font-size: 13px;
         color: var(--gray-600);
-        margin-right: 4px;
-        width: 100%;
+      }
+      .media-badges {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
       }
       .media-badge {
         background: var(--navy);
@@ -986,9 +989,10 @@
         font-family: var(--font-head);
         font-size: 11px;
         font-weight: 700;
-        padding: 5px 12px;
+        padding: 5px 8px;
         border-radius: var(--r-sm);
         letter-spacing: 0.5px;
+        white-space: nowrap;
       }
 
       /* ── INTEGRATIONS ── */
@@ -2062,9 +2066,11 @@
             </p>
             <div class="media-row">
               <span class="media-label">Featured by</span>
-              <span class="media-badge">Bloomberg</span>
-              <span class="media-badge">The Supply Chainer</span>
-              <span class="media-badge">Logistics Management</span>
+              <div class="media-badges">
+                <span class="media-badge">Bloomberg</span>
+                <span class="media-badge">The Supply Chainer</span>
+                <span class="media-badge">Logistics Management</span>
+              </div>
             </div>
           </div>
           <div class="awards-grid">
