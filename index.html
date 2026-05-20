@@ -18,7 +18,7 @@
     />
     <meta property="og:type" content="website" />
     <title>Bergen Logistics — Your Global 3PL Partner</title>
-    <link rel="icon" type="image/svg+xml" href="fav_icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/fav_icon.svg" />
 
     <!-- Start Google Tag Manager -->
     <script>
@@ -240,7 +240,7 @@
         position: absolute;
         inset: 0;
         z-index: 0;
-        background: url("hero_image.webp") center center / cover no-repeat;
+        background: url("assets/hero_image.webp") center center / cover no-repeat;
         filter: blur(3px) brightness(0.3);
         transform: scale(1.04);
       }
@@ -511,7 +511,9 @@
         gap: 12px;
       }
       .form-group {
-        margin-bottom: 13px;
+        position: relative;
+        margin-bottom: 0;
+        padding-bottom: 22px;
       }
       .form-group label {
         display: block;
@@ -645,9 +647,11 @@
         box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12) !important;
       }
       .field-error {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
         font-size: 11px;
         color: #dc2626;
-        margin-top: 4px;
         display: none;
       }
       .form-group.has-error .field-error {
@@ -708,11 +712,11 @@
         flex-shrink: 0;
       }
       .trust-logo {
-        height: 26px;
+        height: 45px;
         width: auto;
         object-fit: contain;
         filter: brightness(0) invert(1);
-        opacity: 0.55;
+        opacity: 0.95;
         transition: opacity 0.2s;
         flex-shrink: 0;
       }
@@ -1338,7 +1342,7 @@
           border-color 0.15s,
           box-shadow 0.15s;
         outline: none;
-        resize: vertical;
+        resize: none;
         min-height: 100px;
         line-height: 1.55;
       }
@@ -1757,7 +1761,7 @@
       <div class="nav-inner">
         <a href="" class="nav-logo" aria-label="Bergen Logistics">
           <img
-            src="logo.svg"
+            src="assets/logo.svg"
             alt="Bergen Logistics"
             onerror="
               this.style.display = 'none';
@@ -1769,7 +1773,7 @@
           >
         </a>
         <div class="nav-right">
-          <a href="#consultation" class="nav-cta">Request a Quote</a>
+          <a href="#quote" class="nav-cta">Request a Quote</a>
         </div>
       </div>
     </nav>
@@ -1870,7 +1874,7 @@
         <!-- /hero-bottom -->
 
         <!-- FORM -->
-        <div class="form-card anim-slide-right" id="consultation">
+        <div class="form-card anim-slide-right" id="quote">
           <!-- <div class="form-eyebrow">Free Consultation</div> -->
           <h3 style="padding: 0 0 20px 0">Get a Fulfillment Plan</h3>
           <!-- <p class="form-sub">We'll respond within 1 business day</p> -->
@@ -2026,8 +2030,8 @@
     <!-- TRUST BAR -->
     <div class="trust-bar" aria-label="Trusted by leading fashion brands">
       <div class="trust-bar-inner">
-        <span class="trust-bar-label">Trusted by</span>
-        <img class="trust-logo" src="assets/SuitShop_Logo_BLACK.png" alt="SuitShop" />
+        <!-- <span class="trust-bar-label">Trusted by</span> -->
+        <img class="trust-logo" src="assets/SuitShop_Logo_BLACK.png" alt="SuitShop" style="padding: 8px 0;" />
         <img class="trust-logo" src="assets/3.1_Phillip_Lim_Logo_BLACK.png" alt="3.1 Phillip Lim" />
         <img class="trust-logo" src="assets/todd_snyder_logo_BLACK.png" alt="Todd Snyder" />
       </div>
@@ -2408,7 +2412,7 @@
           will recommend the right next step.
         </p>
         <div class="cta-buttons">
-          <a href="#consultation" class="btn-cta-primary">
+          <a href="#quote" class="btn-cta-primary">
             Request a Quote
             <!-- <i class="ph-light ph-arrow-right" aria-hidden="true"></i> -->
           </a>
@@ -2421,7 +2425,7 @@
     <footer>
       <div class="footer-inner">
         <div class="footer-logo">
-          <img src="logo.svg" alt="Bergen Logistics" />
+          <img src="assets/logo.svg" alt="Bergen Logistics" />
         </div>
         <div class="footer-copy">
           © 2026 Bergen Logistics. All rights reserved.
