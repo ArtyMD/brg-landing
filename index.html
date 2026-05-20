@@ -619,30 +619,13 @@
       }
 
       /* ── TRUST BAR ── */
-      .trust-bar {
-        background: var(--navy-mid);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .trust-bar-inner {
-        max-width: var(--max-w);
-        margin: 0 auto;
-        padding: 18px var(--gutter);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 32px;
-      }
-      .trust-logo {
-        height: 45px;
+      .testimonial-brand-logo {
+        height: 35px;
         width: auto;
         object-fit: contain;
-        filter: brightness(0) invert(1);
-        opacity: 0.95;
-        transition: opacity 0.2s;
+        filter: brightness(0);
+        opacity: 0.55;
         flex-shrink: 0;
-      }
-      .trust-logo:hover {
-        opacity: 0.85;
       }
 
       /* ── SECTIONS ── */
@@ -874,6 +857,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        justify-content: space-between;
       }
       .testimonial-avatar {
         width: 38px;
@@ -1530,13 +1514,6 @@
           gap: 12px;
           padding: 20px var(--gutter);
         }
-        .trust-bar-inner {
-          padding: 16px var(--gutter);
-          gap: 20px;
-        }
-        .trust-logo {
-          height: 30px;
-        }
       }
     </style>
   </head>
@@ -1811,27 +1788,6 @@
     </section>
 
     <!-- TRUST BAR -->
-    <div class="trust-bar" aria-label="Trusted by leading fashion brands">
-      <div class="trust-bar-inner">
-        <img
-          class="trust-logo"
-          src="assets/SuitShop_Logo_BLACK.png"
-          alt="SuitShop"
-          style="padding: 8px 0"
-        />
-        <img
-          class="trust-logo"
-          src="assets/3.1_Phillip_Lim_Logo_BLACK.png"
-          alt="3.1 Phillip Lim"
-        />
-        <img
-          class="trust-logo"
-          src="assets/todd_snyder_logo_BLACK.png"
-          alt="Todd Snyder"
-        />
-      </div>
-    </div>
-
     <!-- PROBLEMS -->
     <section class="problems-section" aria-labelledby="problems-title">
       <div class="section-inner">
@@ -1994,11 +1950,11 @@
               timely fulfillment. We could not have found a better home!
             </blockquote>
             <div class="testimonial-footer">
-              <div class="testimonial-avatar" aria-hidden="true">SS</div>
               <div>
                 <div class="testimonial-brand">SuitShop</div>
                 <div class="testimonial-role">Fashion Brand</div>
               </div>
+              <img class="testimonial-brand-logo" src="assets/SuitShop_Logo_BLACK.png" alt="SuitShop" style="height:24px">
             </div>
           </div>
           <div class="testimonial-card">
@@ -2014,11 +1970,11 @@
               have asked for a better logistics partner.
             </blockquote>
             <div class="testimonial-footer">
-              <div class="testimonial-avatar" aria-hidden="true">3L</div>
               <div>
                 <div class="testimonial-brand">3.1 Phillip Lim</div>
                 <div class="testimonial-role">Luxury Fashion</div>
               </div>
+              <img class="testimonial-brand-logo" src="assets/3.1_Phillip_Lim_Logo_BLACK.png" alt="3.1 Phillip Lim">
             </div>
           </div>
           <div class="testimonial-card">
@@ -2033,11 +1989,11 @@
               have continued to evolve in this digital age of retail.
             </blockquote>
             <div class="testimonial-footer">
-              <div class="testimonial-avatar" aria-hidden="true">TS</div>
               <div>
                 <div class="testimonial-brand">Todd Snyder</div>
                 <div class="testimonial-role">Menswear Brand</div>
               </div>
+              <img class="testimonial-brand-logo" src="assets/todd_snyder_logo_BLACK.png" alt="Todd Snyder">
             </div>
           </div>
         </div>
