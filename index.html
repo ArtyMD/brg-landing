@@ -240,7 +240,8 @@
         position: absolute;
         inset: 0;
         z-index: 0;
-        background: url("assets/hero_image.webp") center center / cover no-repeat;
+        background: url("assets/hero_image.webp") center center / cover
+          no-repeat;
         filter: blur(3px) brightness(0.3);
         transform: scale(1.04);
       }
@@ -315,27 +316,19 @@
         padding: 0 var(--gutter);
         display: grid;
         grid-template-columns: 1fr 400px;
-        grid-template-rows: 1fr 450px;
         column-gap: 56px;
-        row-gap: 0;
         position: relative;
         z-index: 1;
-        align-content: space-around;
-        justify-content: center;
         align-items: start;
         justify-items: stretch;
       }
-      .hero-top {
-        grid-column: 1;
-        grid-row: 1;
-      }
-      .hero-bottom {
-        grid-column: 1;
-        grid-row: 2;
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
       }
       .form-card {
         grid-column: 2;
-        grid-row: 1 / 3;
       }
 
       .hero-badge {
@@ -394,11 +387,24 @@
         background-clip: text;
         font-style: normal;
       }
+      .hero-top .subtitle2 {
+        font-family: var(--font-head);
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #ffaa6b 0%, #f26419 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
       .hero-top .subtitle {
         font-size: 17px;
         color: rgba(255, 255, 255, 0.85);
         max-width: 600px;
-        margin-bottom: 40px;
+        margin-bottom: 0;
         line-height: 1.7;
       }
 
@@ -1458,21 +1464,18 @@
         .hero-inner {
           grid-template-columns: 1fr;
           gap: 32px;
-          grid-template-rows: 1fr;
+        }
+        .hero-left {
+          display: contents;
         }
         .hero-top {
-          grid-column: auto;
-          grid-row: auto;
           order: 1;
         }
         .form-card {
           grid-column: auto;
-          grid-row: auto;
           order: 2;
         }
         .hero-bottom {
-          grid-column: auto;
-          grid-row: auto;
           order: 3;
         }
         .hero {
@@ -1520,7 +1523,8 @@
           gap: 0;
         }
         .stat-item {
-          flex: 1 1 40%;
+          flex: 0 0 40%;
+          text-align: center;
         }
         .stat-item:not(:last-child) {
           border-right: none;
@@ -1530,6 +1534,7 @@
         .stats-row {
           flex-wrap: wrap;
           gap: 20px;
+          justify-content: center;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
           padding-top: 28px;
         }
@@ -1631,7 +1636,8 @@
           font-size: 12px;
         }
         .stat-item {
-          flex: 1 1 45%;
+          flex: 0 0 40%;
+          text-align: center;
         }
         .stat-number {
           font-size: 24px;
@@ -1730,7 +1736,7 @@
           display: none;
         }
         .trust-logo {
-          height: 20px;
+          height: 30px;
         }
         .float-cta {
           font-size: 12px;
@@ -1783,15 +1789,14 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-texture" aria-hidden="true"></div>
       <div class="hero-inner">
+        <div class="hero-left">
         <div class="hero-top anim-slide-left">
           <!-- <div class="hero-badge" role="note">
       <span class="pulse" aria-hidden="true"></span>
       Trusted by 2,000+ Fashion &amp; Lifestyle Brands
     </div> -->
-          <h1>
-            <em>3PL Fulfillment</em> Built to Scale Fashion, Beauty and
-            Lifestyle Brands
-          </h1>
+          <h1><em>3PL Fulfillment</em> Built to Scale Your Brand <br /></h1>
+          <!-- <h2 class="subtitle2">Fashion &middot; Beauty &middot; Lifestyle</h2> -->
           <p class="subtitle">
             Bergen Logistics delivers 25+ years of omnichannel warehousing
             expertise across the US, Europe, the UK, and Asia, so brands can
@@ -1833,8 +1838,8 @@
                 <i class="ph-light ph-trend-up"></i>
               </div>
               <div class="diff-content">
-                <h4>Scalable 3PL Support</h4>
-                <p>For omnichannel brands</p>
+                <h4>3PL Scaling</h4>
+                <p>Fashion, Beauty & Lifestyle Brands</p>
               </div>
             </div>
           </div>
@@ -1872,6 +1877,7 @@
           </div>
         </div>
         <!-- /hero-bottom -->
+        </div><!-- /hero-left -->
 
         <!-- FORM -->
         <div class="form-card anim-slide-right" id="quote">
@@ -2031,9 +2037,22 @@
     <div class="trust-bar" aria-label="Trusted by leading fashion brands">
       <div class="trust-bar-inner">
         <!-- <span class="trust-bar-label">Trusted by</span> -->
-        <img class="trust-logo" src="assets/SuitShop_Logo_BLACK.png" alt="SuitShop" style="padding: 8px 0;" />
-        <img class="trust-logo" src="assets/3.1_Phillip_Lim_Logo_BLACK.png" alt="3.1 Phillip Lim" />
-        <img class="trust-logo" src="assets/todd_snyder_logo_BLACK.png" alt="Todd Snyder" />
+        <img
+          class="trust-logo"
+          src="assets/SuitShop_Logo_BLACK.png"
+          alt="SuitShop"
+          style="padding: 8px 0"
+        />
+        <img
+          class="trust-logo"
+          src="assets/3.1_Phillip_Lim_Logo_BLACK.png"
+          alt="3.1 Phillip Lim"
+        />
+        <img
+          class="trust-logo"
+          src="assets/todd_snyder_logo_BLACK.png"
+          alt="Todd Snyder"
+        />
       </div>
     </div>
 
